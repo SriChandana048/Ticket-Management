@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+   
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Create Ticket</a>
+        <a href="{{ url_for('tickets') }}">Display Tickets</a>
+    </div>
+    </div>
+
+    <div class="container">
+        <h2>Ticket Management System</h2>
+        <form action="/submit_ticket" method="POST">
+            <div class="form-group">
+                <label for="title">Ticket Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter ticket title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Enter ticket description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="creation_date">Creation Date</label>
+                <input type="date" id="creation_date" name="creation_date" required>
+                <span>Format: YYYY-MM-DD</span>
+            </div>
+
+            <div class="form-group">
+                <label for="last_updated">Last Updated Date</label>
+                <input type="date" id="last_updated" name="last_updated" required>
+                <span>Format: YYYY-MM-DD</span>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" id="category" name="category" placeholder="Enter category" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="open">Open</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="close">Close</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Ticket</button>
+        </form>
+    </div>
+</body>
+</html>
